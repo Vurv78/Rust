@@ -9,10 +9,11 @@ Those numbers for which this process ends in 1 are happy numbers, while those th
 https://www.geeksforgeeks.org/happy-number/ or https://github.com/karan/Projects
 */
 
-// Bad implementation of happy numbers, gets 934865 happy numbers from 1 to 10,000,000 in around 2 seconds after building as a release for 0.6s.
-// Jumps from a lot of different number types since I had the idea of using smaller numbers for digits, stack level, etc.
+// Really inefficient way to go about this algorithm.
+// If you wanted to make it faster, replace get_digits with a function to return the sum of all of those digits directly,
+// Ditching the vector middleman which wastes memory anyway.
 
-static MAX_STACK: u16 = 4;
+static MAX_STACK: u16 = 10;
 
 // Returns a vector of digits of a u32 number.
 fn get_digits(num: u32) -> Vec<u8> {
@@ -51,7 +52,7 @@ fn get_happy_range(start_num: u32, end_num: u32) -> Vec<u32> {
 }
 
 fn main() {
-    let (min, max) = (1, 10_000_000);
+    let (min, max) = (1, 5_000_000);
     let bench = std::time::Instant::now();
     println!("Found {} happy numbers in the range of {} to {} in {}s", get_happy_range(min, max).len(), min, max, bench.elapsed().as_secs());
 }
