@@ -1,5 +1,7 @@
+## happy_numbers_fast
+Optimized version of happy numbers, takes 319 ms to find all happy numbers from 1 to 10 million.
 
-
+```rust
 /*
 Happy Numbers - A happy number is defined by the following process.
 
@@ -8,8 +10,6 @@ or it loops endlessly in a cycle which does not include 1.
 Those numbers for which this process ends in 1 are happy numbers, while those that do not end in 1 are unhappy numbers.
 https://www.geeksforgeeks.org/happy-number/ or https://github.com/karan/Projects
 */
-
-// Optimized version of happy numbers, takes 319 ms to find all happy numbers from 1 to 10 million.
 
 // You might be asking why we use a stack level method instead of a lookup table
 // this is because Rust's lookup tables are just so... slooow... Or maybe lookup tables in general. I dunno. (BTreeMap / HashMaps)
@@ -53,3 +53,5 @@ fn main() {
     let bench = std::time::Instant::now();
     println!("Found {} happy numbers in the range of {} to {} in {}ms", get_happy_range(min, max), min, max, bench.elapsed().as_millis());
 }
+
+```
