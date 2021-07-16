@@ -1,0 +1,7 @@
+{
+	"rust-analyzer.diagnostics.disabled": [
+		// See https://github.com/rust-analyzer/rust-analyzer/issues/5412
+		// And see https://github.com/rust-analyzer/rust-analyzer/issues/9576
+		"missing-unsafe"
+	]
+}
